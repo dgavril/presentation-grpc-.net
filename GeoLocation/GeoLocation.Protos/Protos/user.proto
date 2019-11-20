@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Protos.User";
+
+package User;
+
+service UserService {
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message UserModel {
+	string userId = 1;
+	string userName = 2;
+}
+
+message LoginRequest {
+	UserModel user = 1;
+}
+
+message LoginResponse {
+  bool success = 1;
+}
